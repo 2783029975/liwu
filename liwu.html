@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="Zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chorme">
+    <title>批量赠送勋章</title>
+    <style>
+        body {
+            background-image: url(https://img.gamemale.com/album/202407/12/233421u4rklr7fk7a4o5f7.jpg) !important;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            width: 640px;
+            margin: 0 auto;
+        }
+
+        #ct {
+            background: rgba(232, 228, 225, 0.3);
+            transition: all 0.5s;
+            border-radius: 10px;
+            margin: 12px;
+            padding: 18px;
+        }
+
+        #ct:hover {
+            backdrop-filter: blur(6px);
+            background: rgba(232, 228, 225, 0.7);
+        }
+
+        #ct * {
+            opacity: 0.3;
+            transition: opacity 0.5s;
+        }
+
+        #ct:hover * {
+            opacity: 1;
+        }
+
+        .top_container {
+            margin-bottom: 16px;
+        }
+
+        .top_container .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0px;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"] {
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0px;
+            margin-bottom: 8px;
+        }
+
+        .gift-only {
+            width: 55%;
+        }
+
+        .right_part {
+            width: 45%;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        img {
+            border-radius: 4px;
+            height: 34px;
+            width: 34px;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.6);
+            margin: 0 6px 0 8px;
+        }
+
+        #functions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            background-color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            margin: 16px 0;
+        }
+
+        #total_cost {
+            display: flex;
+            justify-content: center;
+            margin-top: 75px;
+        }
+        
+        p {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ct">
+        <div class="top_container">
+            <div class="uid_input">
+                <p class="subtitle">对方的用户ID: </p><input type="text" id="zs_uid" value=""><br />
+            </div>
+        </div>
+        <div class="container">
+            <div class="gift-only">
+                <p class="subtitle">仅赠送</p>
+                <div class="options"><img src="https://img.gamemale.com/album/201905/13/141900suhhfqzptfzvlfak.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='195' gold="01" magic="0"
+                        onchange="calculate()" />[金币01] [1日] 没有梦想的咸鱼
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113409q011xcf550bav1a5.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='46' gold="22" magic="0"
+                        onchange="calculate()" />[金币22] [3日] 灵光补脑剂
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/202209/08/220343vhng1hmssoyh577i.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='456' gold="25" magic="0"
+                        onchange="calculate()" />[金币25] [3日] 茉香啤酒
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/114500je50kb57xgkx28jx.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='100' gold="0" magic="8"
+                        onchange="calculate()" />[咒术08] [3日] 咆哮诅咒
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113346zfvtihpznujw1nii.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='20' gold="10" magic="0"
+                        onchange="calculate()" />[金币10] [5日] 丢肥皂
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113342to7t7zj24jot5s7t.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='45' gold="12" magic="0"
+                        onchange="calculate()" />[金币12] [5日] 千杯不醉
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201903/31/141637dqowosrr6o66wszv.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='174' gold="13" magic="0"
+                        onchange="calculate()" />[金币13] [5日] 变骚喷雾
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113350j47rr1f17qq4nafs.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='19' gold="15" magic="0"
+                        onchange="calculate()" />[金币15] [5日] 送情书
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/114543q711gvjj1gb7181b.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='119' gold="0" magic="8"
+                        onchange="calculate()" />[咒术08] [5日] 霍格沃茨五日游
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113509p6ybf8wy2yf2z7zd.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='150' gold="50" magic="0"
+                        onchange="calculate()" />[金币50] [7日] 神秘商店贵宾卡
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/202209/08/220403i7qb9uk0w9w5180w.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='455' gold="70" magic="0"
+                        onchange="calculate()" />[金币70] [7日] 闪光糖果盒
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113515vyfn72h7yw5ad3t7.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='143' gold="40" magic="0"
+                        onchange="calculate()" />[金币40] [14日] 萨赫的蛋糕
+                </div>
+                <div class="options"><img src="https://img.gamemale.com/album/201507/02/113358ltdxvdxwc2n1an25.gif" />
+                    <input type="checkbox" name='Checkbox[]' value='104' gold="180" magic="0"
+                        onchange="calculate()" />[金币180] [30日] 遗忘之水
+                </div>
+            </div>
+            <div class="right_part">
+                <div class="self-purchase">
+                    <p class="subtitle">可自购</p>
+                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114530cthryt8yatcaass1.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='14' gold="0" magic="4"
+                            onchange="calculate()" />[咒术04] [3日] 炼金之心
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/201904/25/215910qzr53805k8vr8cee.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='186' gold="0" magic="4"
+                            onchange="calculate()" />[咒术04] [3日] 石肤术
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114440h1op1p51o3woiip6.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='44' gold="0" magic="8"
+                            onchange="calculate()" />[咒术08] [4日] 召唤古代战士
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114427z0y3lkpzgk46gnp5.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='43' gold="0" magic="3"
+                            onchange="calculate()" />[咒术03] [5日] 水泡术
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/202209/08/233428tmennhulj3nj3e6x.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='458' gold="0" magic="15"
+                            onchange="calculate()" />[咒术15] [5日] 思绪骤聚
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/202310/11/195901i4sbsnnn40qnsc4s.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='457' gold="0" magic="7"
+                            onchange="calculate()" />[咒术07] [7日] 雷霆晶球
+                    </div>
+                    <div class="options"><img src="https://img.gamemale.com/album/202312/20/210416cnqgzpupdqqqpsq6.gif" />
+                        <input type="checkbox" name='Checkbox[]' value='600' gold="0" magic="8"
+                            onchange="calculate()" />[咒术08] [7日] 杀意人偶
+                    </div>
+                </div>
+                <div id="functions">
+                    <div id="total_cost">
+                    </div>
+                    <button type="button" onclick="send()">
+                        点击赠送
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <p>请注意：<br>
+            在点击赠送后，如果只出现了你勾选的第一个勋章，说明其他窗口可能被你的浏览器拦截了，返回这个页面，在浏览器地址栏的右边，取消对弹出窗口的拦截哦~</p>
+    </div>
+
+    <script type="text/javascript">
+        function calculate() {
+            var str = document.getElementsByName("Checkbox[]");
+            var objarray = str.length;
+            var totalGold = 0;
+            var totalMagic = 0;
+            for (var z = 0; z < objarray; z++) {
+                if (str[z].checked == true) {
+                    totalGold += parseInt(str[z].getAttribute("gold"));
+                    totalMagic += parseInt(str[z].getAttribute("magic"));
+                }
+            }
+            document.getElementById("total_cost").innerHTML = "总消耗：金币 = " + totalGold + " 咒术 = " + totalMagic;
+        }
+
+        function send() {
+            var url = "https://www.gamemale.com/plugin.php?id=wodexunzhang:showxunzhang&action=zengsongAction&medalid=";
+            var uid = document.getElementById("zs_uid").value;
+            var str = document.getElementsByName("Checkbox[]");
+            var objarray = str.length;
+            var sum;
+            for (var z = 0; z < objarray; z++) {
+                if (str[z].checked == true) {
+                    sum = url + str[z].value + "&zs_uid=" + uid + "&checkUID=" + uid;
+                    window.open(sum);
+                }
+            }
+        }
+
+        // 初始化时计算一次
+        calculate();
+    </script>
+</body>
+
+</html>
