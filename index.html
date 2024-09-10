@@ -238,6 +238,7 @@
 
     <script type="text/javascript">
         // 获取URL参数的函数
+        // 获取URL参数的函数
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -250,6 +251,12 @@
 
         // 使用函数获取'uid'参数
         var uid = getParameterByName('uid');
+
+        // 将获取到的UID放置在输入框中
+        if (uid) {
+            document.getElementById('zs_uid').value = uid;
+        }
+        
         console.log(uid); // 输出: 1234567
 
         function calculate() {
