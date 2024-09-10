@@ -237,9 +237,10 @@
     </div>
 
     <script type="text/javascript">
-        const previousURL = document.referrer;
-        console.log(previousURL);
+
         function calculate() {
+            var previousURL = document.referrer;
+            console.log(previousURL);
             var str = document.getElementsByName("Checkbox[]");
             var objarray = str.length;
             var totalGold = 0;
