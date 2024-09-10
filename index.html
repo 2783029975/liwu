@@ -113,7 +113,7 @@
             justify-content: center;
             margin-top: 75px;
         }
-        
+
         p {
             margin-bottom: 0px;
         }
@@ -186,31 +186,38 @@
             <div class="right_part">
                 <div class="self-purchase">
                     <p class="subtitle">可自购</p>
-                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114530cthryt8yatcaass1.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/201507/02/114530cthryt8yatcaass1.gif" />
                         <input type="checkbox" name='Checkbox[]' value='14' gold="0" magic="4"
                             onchange="calculate()" />[咒术04] [3日] 炼金之心
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/201904/25/215910qzr53805k8vr8cee.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/201904/25/215910qzr53805k8vr8cee.gif" />
                         <input type="checkbox" name='Checkbox[]' value='186' gold="0" magic="4"
                             onchange="calculate()" />[咒术04] [3日] 石肤术
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114440h1op1p51o3woiip6.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/201507/02/114440h1op1p51o3woiip6.gif" />
                         <input type="checkbox" name='Checkbox[]' value='44' gold="0" magic="8"
                             onchange="calculate()" />[咒术08] [4日] 召唤古代战士
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/201507/02/114427z0y3lkpzgk46gnp5.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/201507/02/114427z0y3lkpzgk46gnp5.gif" />
                         <input type="checkbox" name='Checkbox[]' value='43' gold="0" magic="3"
                             onchange="calculate()" />[咒术03] [5日] 水泡术
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/202209/08/233428tmennhulj3nj3e6x.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/202209/08/233428tmennhulj3nj3e6x.gif" />
                         <input type="checkbox" name='Checkbox[]' value='458' gold="0" magic="15"
                             onchange="calculate()" />[咒术15] [5日] 思绪骤聚
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/202310/11/195901i4sbsnnn40qnsc4s.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/202310/11/195901i4sbsnnn40qnsc4s.gif" />
                         <input type="checkbox" name='Checkbox[]' value='457' gold="0" magic="7"
                             onchange="calculate()" />[咒术07] [7日] 雷霆晶球
                     </div>
-                    <div class="options"><img src="https://img.gamemale.com/album/202312/20/210416cnqgzpupdqqqpsq6.gif" />
+                    <div class="options"><img
+                            src="https://img.gamemale.com/album/202312/20/210416cnqgzpupdqqqpsq6.gif" />
                         <input type="checkbox" name='Checkbox[]' value='600' gold="0" magic="8"
                             onchange="calculate()" />[咒术08] [7日] 杀意人偶
                     </div>
@@ -230,6 +237,8 @@
     </div>
 
     <script type="text/javascript">
+        const previousURL = document.referrer;
+        console.log(previousURL);
         function calculate() {
             var str = document.getElementsByName("Checkbox[]");
             var objarray = str.length;
