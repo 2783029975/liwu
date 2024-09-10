@@ -242,16 +242,16 @@
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
+                results = regex.exec(url);
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
 
-        // 使用函数获取'referrer'参数
-        var referrer = getParameterByName('referrer');
-        console.log(referrer); // 输出: https://www.gamemale.com/space-uid-730713.html
-        
+        // 使用函数获取'uid'参数
+        var uid = getParameterByName('uid');
+        console.log(uid); // 输出: 1234567
+
         function calculate() {
             var str = document.getElementsByName("Checkbox[]");
             var objarray = str.length;
