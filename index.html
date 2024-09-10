@@ -237,10 +237,22 @@
     </div>
 
     <script type="text/javascript">
+        // 获取URL参数的函数
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
 
+        // 使用函数获取'referrer'参数
+        var referrer = getParameterByName('referrer');
+        console.log(referrer); // 输出: https://www.gamemale.com/space-uid-730713.html
+        
         function calculate() {
-            var previousURL = document.referrer;
-            console.log(previousURL);
             var str = document.getElementsByName("Checkbox[]");
             var objarray = str.length;
             var totalGold = 0;
