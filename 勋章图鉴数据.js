@@ -7,6 +7,8 @@
 // @match        https://www.gamemale.com/*
 // ==/UserScript==
 
+document.charset = "UTF-8"
+
 window.勋章数据 = [
   {
     基本信息: {
